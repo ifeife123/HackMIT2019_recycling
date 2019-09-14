@@ -9,13 +9,16 @@ import cv2
 
 class WebCam:
     def __init__(self, window_name='videoPlayer'):
+        """
+        creates an instance of class webcam
+        :param window_name:
+        """
         self.is_taking_picture = False
         self.path = 0
         self.window_name = window_name
         self.imageFileQueue = []
         self.imageIndex = 0
         self.run = True
-        self.cam_setup()
         self.start_recording()
 
     def clear_queue(self):
@@ -25,7 +28,7 @@ class WebCam:
         """
         self.imageFileQueue = []
 
-    def picture_taker(self, capture_object, number_of_pictures=1, wait_time=100):
+    def picture_taker(self, capture_object, number_of_pictures=3, wait_time=10):
         """
         saves frames to frames folder
         :param capture_object:
@@ -40,7 +43,6 @@ class WebCam:
             images.append(frame)
             cv2.waitKey(wait_time)
         for i, image in enumerate(images):
-            print("saving image to frames/frame%d.jpg" % self.imageIndex)
             cv2.imwrite("frames/frame%d.jpg" % self.imageIndex, image)
             self.imageFileQueue.append("frames/frame%d.jpg" % self.imageIndex)
             self.imageIndex += 1
@@ -48,6 +50,10 @@ class WebCam:
         return
 
     def cam_setup(self):
+        """
+        sets up the camera and assigns the callbacks
+        :return:
+        """
         def listener(event, x, y, flags, param):
             # take picture on left mouse click
             if event == cv2.EVENT_LBUTTONDOWN and not self.is_taking_picture:
@@ -63,16 +69,28 @@ class WebCam:
         self.cap = cv2.VideoCapture(self.path)
 
     def display_result(self, imgfile):
-        cv2.imshow(self.window_name, imgfile)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        """
+        display a new image in webcam window.
+        :param imgfile:
+        :return:
+        """
+        img = cv2.imread(imgfile)
+        cv2.imshow(self.window_name, img)
+        cv2.waitKey(1000)
+        # cv2.destroyAllWindows()
 
     def start_recording(self):
+        """
+        begins the recording
+        :return:
+        """
         self.run = True
+        self.cam_setup()
         while self.run:
             success, frame = self.cap.read()
             cv2.imshow(self.window_name, frame)
             cv2.waitKey(10)
-        cv2.destroyAllWindows()
+        # cv2.destroyAllWindows()
+        # destroy all Windows doesn't get rid of the error msgs
 
 # test = WebCam()

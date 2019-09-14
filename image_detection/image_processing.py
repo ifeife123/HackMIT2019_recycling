@@ -11,7 +11,7 @@ from google.cloud.vision import types
 
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(os.path.dirname(__file__),
-                                                            "RECYCLE-228027d5d267.json")
+                                                            "RECYCLE-272aed89df32.json")
 # Instantiates a client
 client = vision.ImageAnnotatorClient()
 
@@ -29,9 +29,9 @@ def get_labels(imgfile):
     # Performs label detection on the image file
     response = client.label_detection(image=image)
     labels = response.label_annotations
-    all_labels = []
+    all_labels = set()
     for label in labels:
-        all_labels.append(label.description)
+        all_labels.add(label.description)
     return all_labels
 
 
