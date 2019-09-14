@@ -59,7 +59,7 @@ class WebCam:
             if event == cv2.EVENT_LBUTTONDOWN and not self.is_taking_picture:
                 self.run = False
                 self.is_taking_picture = True
-                self.picture_taker(self.cap)
+                self.picture_taker(self.cap, 1)
             self.is_taking_picture = False
             return
 
