@@ -14,6 +14,7 @@ while True:
         labels.extend(image_processing.get_labels(filename))
     wb.clear_queue()
     igen_recycle = check_list(labels)
+    print(labels)
     print(igen_recycle)
     '''
     Send the label values somewhere to be processed
