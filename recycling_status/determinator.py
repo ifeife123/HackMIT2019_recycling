@@ -11,9 +11,21 @@ running_list = {'Carton':'No','Glass Bottle':'Yes','Wine Bottle':'Yes','Beer Bot
 def check_list(input_list):
     results = []
     errors = []
+    yes = 0
+    no = 0
     for item in input_list:
         try:
             results.append(running_list[item])
         except:
             errors.append(item)
-    return results
+    for i in results:
+        if i == 'Yes':
+            yes += 1
+        elif i == 'No':
+            no += 1
+        else:
+            print('Wut')
+    if yes > no:
+        return "RECYCLE"
+    else:
+        return "TRASH"
