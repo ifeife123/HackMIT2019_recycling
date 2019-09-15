@@ -20,11 +20,11 @@ while True:
     and get a string in return: ("recycle", "compostable", or "trash")
     and display the results in a window
     '''
-    if igen_recycle == True:
+    if igen_recycle == "recycle":
         wb.display_result("result_img/recycle.png")
-    elif igen_recycle == False:
+    elif igen_recycle == "not_recycle":
         wb.display_result("result_img/no_recycle.png")
-    else:
+    elif igen_recycle == "dont_know":
         wb.display_result("result_img/unknown.png")
 
     time.sleep(1)
