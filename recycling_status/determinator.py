@@ -2,7 +2,7 @@
 file to determine whether a material is recyclable, compostable, or other given a search term
 '''
 running_list = {'Carton':'No','Glass bottle':'Yes','Wine bottle':'Yes','Beer bottle':'Yes',
-               'Plastic bottle':'Yes','Cutlery':'No','Book':'Yes',
+               'Plastic bottle':'Yes','Cutlery':'No','Book':'Yes', 'Drink':'Yes',
                'Cardboard':'Yes','Paper products':'Yes','Newspaper':'Yes','Magazine':'Yes',
                'Tin can':'Yes','Plastic bag':'No','Paper bag':'Yes','Coffee cup':'No',
                'Prepackaged food':'No','Clothes':'No','Chain':'No','Wire':'No',
