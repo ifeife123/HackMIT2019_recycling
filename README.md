@@ -2,9 +2,10 @@
 Go to https://devpost.com/software/trash-mit for more informaion
 
 
-## Requirements
-OpenCV-python
-google cloud - visit https://cloud.google.com/vision/docs/quickstart-client-libraries
+## Set up 
+install OpenCV-python
+install google cloud - visit https://cloud.google.com/vision/docs/quickstart-client-libraries
+place 'service account key' json in image_detection folder witth name HackMIT Recycle-49597f5ae9dc.json, make sure to remove before uploading
 
 ## How to use
 
