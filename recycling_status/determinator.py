@@ -6,7 +6,7 @@ running_list = {'Carton':'No','Glass bottle':'Yes','Wine bottle':'Yes','Beer bot
                'Cardboard':'Yes','Paper products':'Yes','Newspaper':'Yes','Magazine':'Yes',
                'Tin can':'Yes','Plastic bag':'No','Paper bag':'Yes','Coffee cup':'No',
                'Prepackaged food':'No','Clothes':'No','Chain':'No','Wire':'No',
-                'Bottled water':'Yes', 'Bottle':'Yes', 'Paper product':'Yes', 'Origami paper':'Yes', 'Paper':'Yes', 'Origami':'Yes'}
+                'Bottled water':'Yes', 'Bottle':'Yes', 'Paper product':'Yes', 'Origami paper':'Yes', 'Paper':'Yes', 'Origami':'Yes', 'Junk food':'Yes', 'Snack':'Yes'}
 common_backgrounds = []
 def check_list(input_list):
     results = []
