@@ -93,7 +93,9 @@ class WebCam:
         while self.run:
             success, frame = self.cap.read()
             cv2.imshow(self.window_name, frame)
-            cv2.waitKey(10)
+            k = cv2.waitKey(10)
+            if cv2.waitKey(1) == ord('q'):
+                cv2.destroyAllWindows()
         # cv2.destroyAllWindows()
         # destroy all Windows doesn't get rid of the error msgs
 

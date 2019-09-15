@@ -7,17 +7,18 @@ running_list = {'Carton':'No','Glass bottle':'Yes','Wine bottle':'Yes','Beer bot
                'Tin can':'Yes','Plastic bag':'No','Paper bag':'Yes','Coffee cup':'No',
                'Prepackaged food':'No','Clothes':'No','Chain':'No','Wire':'No',
                 'Bottled water':'Yes', 'Bottle':'Yes'}
-
+common_backgrounds = []
 def check_list(input_list):
     results = []
     errors = []
     yes = 0
     no = 0
     for item in input_list:
-        try:
-            results.append(running_list[item])
-        except:
-            errors.append(item)
+        if item not in common_backgrounds:
+            try:
+                results.append(running_list[item])
+            except:
+                errors.append(item)
     for i in results:
         if i == 'Yes':
             yes += 1
@@ -31,3 +32,14 @@ def check_list(input_list):
         return "dont_know"
     else:
         return "not_recycle"
+
+def update_csv(errors, igen_recycle, csv_dictionary):
+    """
+    updates csv so count for each item in errors is corrected
+    """
+    index = 0 if igen_recycle else 1
+
+    for item in errors:
+        if item in csv_dictionary:
+            csv_dictionary[item][index] += 1 #update the count of recycle/not recycle for that namedWindow
+    return csv_dictionary
