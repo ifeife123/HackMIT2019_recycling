@@ -35,7 +35,7 @@ while True:
 
             l = cv2.waitKey(0)
 
-            is_recycled = 1 if l == ord(y) else 0
+            is_recycled = 1 if l == ord('y') else 0
             rows = zip(labels, [is_recycled for i in range(len(labels))])
 
             with open('record.csv', 'a') as csvFile:
