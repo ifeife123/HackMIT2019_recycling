@@ -25,7 +25,7 @@ while True:
     elif igen_recycle == "not_recycle":
         wb.display_result("result_img/no_recycle.png")
     elif igen_recycle == "dont_know":
-        wb.display_result("result_img/unknown.png")
+        new_label = wb.display_result("result_img/unknown.png")
 
     time.sleep(1)
     wb.start_recording()

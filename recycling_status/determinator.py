@@ -8,6 +8,7 @@ running_list = {'Carton':'No','Glass Bottle':'Yes','Wine Bottle':'Yes','Beer Bot
                'Prepackaged Food':'No','Clothes':'No','Chain':'No','Wire':'No',
                 'Bottled Water':'Yes', 'Bottle':'Yes'}
 
+
 def check_list(input_list):
     results = []
     errors = []

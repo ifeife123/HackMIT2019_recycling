@@ -76,7 +76,11 @@ class WebCam:
         """
         img = cv2.imread(imgfile)
         cv2.imshow(self.window_name, img)
-        cv2.waitKey(1000)
+        key_stroke = cv2.waitKey(1000)
+        if cv2.waitKey(33) == ord('y'):
+            return "recycle"
+        elif cv2.waitKey(33) == ord('n'):
+            return "not_recycle"
         # cv2.destroyAllWindows()
 
     def start_recording(self):
