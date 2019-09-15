@@ -10,3 +10,5 @@ google cloud - visit https://cloud.google.com/vision/docs/quickstart-client-libr
 
 run main.py in your terminal.
 Place object in frame - press 's' to start and picture is taken, press 'q' to quitt
+
+record.csv is a running list of items are and aren't recyclable
